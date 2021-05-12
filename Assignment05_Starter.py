@@ -71,31 +71,31 @@ while True:
             if blnItemRemoved = True:
                 print("The task was removed.")
             else:
-                print("I'm sorry, but I could not find that task.")
-            print("******* The current items ToDo are: *******")
+                print("I'm sorry, but the task could not be found.")
+            print("******* The current items to do are: *******")
             for row in lstTable:
                 print(row["Task"] + "(" + row["Priority"] + ")")
             print("*******************************************")
         continue
 # Step 6 - Save tasks to the ToDoList.txt file
     elif strChoice.strip() == "4":
-        print("******* The current items ToDo are: *******")
+        print("******* The current items to do are: *******")
         for row in lstTable:
             print(row["Task"] + "(" + row["Priority"] + ")")
         print("*******************************************")
-        if "y" == str(input("Save this data to file? (y/n) - ")).strip().lower():
+        if "y" == str(input("Save this data to file (Y/N)? ")).strip().lower():
             objFile = open(objFileName, "w")
             for dicRow in lstTable:
                 print(row["Task"] + "(" + row["Priority"] + ")")
             print("*******************************************")
-            if "y" == str(input("Save this data to file? (y/n) - ")).strip().lower():
+            if "y" == str(input("Save this data to the file (Y/N)? ")).strip().lower():
                 objFile = open(objFileName, "w")
                 for dicRow in lstTable:
                     objFile.write(dicRow["Task"] + "," + dicRow["Priority"] + "\n")
                 objFile.close()
                 input("Data saved to file! Press the [Enter] key to return to menu.")
             else:
-                input("New data was NOT Saved, but previous data still exists! Press "
+                input("New data was NOT Saved, but previous data still exists. Press "
                       "the [Enter] key to return to menu.")
             continue
 # Step 7 - Exit the program
